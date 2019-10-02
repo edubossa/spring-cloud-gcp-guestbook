@@ -22,6 +22,6 @@ public interface GuestbookMessagesClient {
 	Optional<GuestbookMessage> getMessage(@PathVariable("id") long messageId);
 	
 	@RequestMapping(method=RequestMethod.POST, path="/")
-	void add(@RequestBody GuestbookMessage message);
+	GuestbookMessage add(@RequestBody GuestbookMessage message);
 }
 

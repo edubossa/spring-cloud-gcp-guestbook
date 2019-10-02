@@ -48,8 +48,8 @@ public class FrontendController {
 			Map<String, String> payload = new HashMap<>();
 			payload.put("name", name);
 			payload.put("message", message);
-			client.add(GuestbookMessage.builder().name(name).message(message).build());
-			log.info("Payload received --> " + payload.toString());
+			GuestbookMessage messageResponse = client.add(GuestbookMessage.builder().name(name).message(message).build());
+			log.info("Payload received --> " + messageResponse.toString());
 		}
 		return "redirect:/";
   }
