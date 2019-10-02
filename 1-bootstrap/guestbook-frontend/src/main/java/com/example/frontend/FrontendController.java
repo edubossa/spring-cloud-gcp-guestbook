@@ -35,7 +35,7 @@ public class FrontendController {
 			model.addAttribute("greeting", String.format("%s %s", greeting, name));
 			log.info("greeting param --> " + this.greeting);
 		}
-		model.addAttribute("messages", client.getMessages().getContent());
+		model.addAttribute("messages", client.getMessages());
 		return "index";
 	}
 	
@@ -48,7 +48,7 @@ public class FrontendController {
 			Map<String, String> payload = new HashMap<>();
 			payload.put("name", name);
 			payload.put("message", message);
-			client.add(payload);
+			client.add(GuestbookMessage.builder().name(name).message(message).build());
 			log.info("Payload received --> " + payload.toString());
 		}
 		return "redirect:/";

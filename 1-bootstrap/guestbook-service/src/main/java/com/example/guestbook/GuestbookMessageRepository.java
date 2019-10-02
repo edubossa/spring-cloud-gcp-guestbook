@@ -2,9 +2,10 @@ package com.example.guestbook;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
-// http://localhost:8081/guestbookMessages
-@RepositoryRestResource
+@Repository
 public interface GuestbookMessageRepository extends PagingAndSortingRepository<GuestbookMessage, Long> {
+
 }
 
