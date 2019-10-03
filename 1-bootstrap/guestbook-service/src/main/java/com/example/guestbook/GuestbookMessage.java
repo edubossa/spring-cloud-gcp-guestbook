@@ -2,12 +2,10 @@ package com.example.guestbook;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "guestbook_message")
 @Data
 public class GuestbookMessage {
 	@Id
