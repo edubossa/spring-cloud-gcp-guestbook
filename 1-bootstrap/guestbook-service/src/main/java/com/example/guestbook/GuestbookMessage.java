@@ -5,7 +5,6 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "guestbook_message")
 @Data
 public class GuestbookMessage {
 	@Id
