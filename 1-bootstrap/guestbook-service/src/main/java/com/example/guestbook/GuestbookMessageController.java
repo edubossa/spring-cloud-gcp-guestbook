@@ -19,7 +19,7 @@ public class GuestbookMessageController {
 
     @GetMapping
     Iterable<GuestbookMessage> getMessages() {
-        log.debug("GuestbookMessageController.getMessages");
+        log.info("=========================[GuestbookMessageController.getMessages]========================");
         final Iterable<GuestbookMessage> messages = this.repository.findAll();
         log.info(messages.toString());
         return messages;
@@ -27,7 +27,7 @@ public class GuestbookMessageController {
 
     @GetMapping(path = "/{id}")
     Optional<GuestbookMessage> getMessage(@PathVariable("id") long messageId) {
-        log.debug("GuestbookMessageController.getMessage/" + messageId);
+        log.info("GuestbookMessageController.getMessage/" + messageId);
         Optional<GuestbookMessage> message = this.repository.findById(messageId);
         log.info(message.toString());
         return message;
@@ -35,7 +35,7 @@ public class GuestbookMessageController {
 
     @PostMapping
     GuestbookMessage add(@RequestBody  GuestbookMessage guestbookMessage) {
-        log.debug("GuestbookMessageController.add");
+        log.info("GuestbookMessageController.add");
         GuestbookMessage save = this.repository.save(guestbookMessage);
         log.info(save.toString());
         return save;
