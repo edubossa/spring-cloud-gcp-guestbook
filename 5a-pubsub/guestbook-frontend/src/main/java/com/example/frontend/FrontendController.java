@@ -40,7 +40,15 @@ public class FrontendController {
 			payload.put("message", message);
 			client.add(payload);
 
-			pubSubTemplate.publish("messages", name + ": " + message);
+			final GuestbookMessage guestbook = GuestbookMessage.builder().name(name).message(message).build();
+			Map<String, String> headers = new HashMap<>();
+			headers.put("KEY-01", UUID.randomUUID().toString());
+			headers.put("KEY-02", UUID.randomUUID().toString());
+			headers.put("KEY-03", UUID.randomUUID().toString());
+			headers.put("KEY-04", UUID.randomUUID().toString());
+			headers.put("KEY-05", UUID.randomUUID().toString());
+			headers.put("KEY-06", UUID.randomUUID().toString());
+			pubSubTemplate.publish("messages", guestbook.toString(), headers);
 		}
 		return "redirect:/";
   }
