@@ -65,6 +65,8 @@ public class FrontendController {
 			// Bucket ID is our Project ID
 			String bucket = "gs://" + projectIdProvider.getProjectId();
 
+			System.out.println("Buket ==> " + bucket);
+
 			// Generate a random file name
 			filename = UUID.randomUUID().toString() + ".jpg";
 			WritableResource resource = (WritableResource)
