@@ -112,6 +112,8 @@
 		</dependencies>
 	</dependencyManagement>
 
+
+	<!--  ./mvnw appengine:deploy -DskipTests  -->
 	<build>
 		<plugins>
 			<plugin>
