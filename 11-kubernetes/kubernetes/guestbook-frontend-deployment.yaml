@@ -20,7 +20,7 @@ metadata:
     app: guestbook-frontend
   name: guestbook-frontend
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: guestbook-frontend
